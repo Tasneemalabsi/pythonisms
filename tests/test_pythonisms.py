@@ -6,7 +6,7 @@ def test_version():
 
 
 """
-this modul for testing sum,product and sequer for linkedlist values
+this modul for testing sum,product and square for linkedlist values
 """
 from pythonisms.pythonisms import Node,LinkedList,MathThings
 import pytest 
@@ -32,22 +32,13 @@ def test_ll_from_collection():
   actual = str(ll)
   assert actual == expected
 
-def test_iteration():
-  ll = LinkedList([1,2])
-  expected = [1,2]
-  for index, actual_item in enumerate(ll):
-    assert actual_item == expected[index]
+def test_boolean():
+    ll = LinkedList()
+    ll.insert(1)
+    assert bool(ll) == True
+    ll2 = LinkedList()
+    assert bool(ll2) == False
 
-def test_indexing():
-  ll = LinkedList([1,2])
-  expected_0 = 1
-  expected_1 = 2
-  actual_0 = ll[0]
-  actual_1 = ll[1]
-  assert actual_0 == expected_0
-  assert actual_1 == expected_1
-  with pytest.raises(IndexError, match="Index out of range"):
-        actual = ll[2]
 
 
 
